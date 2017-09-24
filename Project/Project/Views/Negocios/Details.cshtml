@@ -1,0 +1,106 @@
+﻿@model Domain.Negocios
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Negocios</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Categoria.nombreCategoria)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Categoria.nombreCategoria)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.nombreNegocio)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.nombreNegocio)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Direccion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Direccion)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Pais)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Pais)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Ciudad)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Ciudad)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Telefono)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Telefono)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Telefono2)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Telefono2)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Logo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Logo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.horarioAtencion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.horarioAtencion)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Descripcion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Descripcion)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Online)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Online)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.idNegocio }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

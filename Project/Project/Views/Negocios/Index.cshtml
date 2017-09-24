@@ -1,0 +1,93 @@
+﻿@model IEnumerable<Domain.Negocios>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Categoria.nombreCategoria)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.nombreNegocio)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Direccion)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Pais)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Ciudad)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Telefono)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Telefono2)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Logo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.horarioAtencion)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Descripcion)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Online)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Categoria.nombreCategoria)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.nombreNegocio)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Direccion)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Pais)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Ciudad)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Telefono)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Telefono2)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Logo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.horarioAtencion)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Descripcion)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Online)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.idNegocio }) |
+            @Html.ActionLink("Details", "Details", new { id=item.idNegocio }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.idNegocio })
+        </td>
+    </tr>
+}
+
+</table>
