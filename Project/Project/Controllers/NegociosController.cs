@@ -14,6 +14,7 @@ namespace Project.Controllers
 {
     public class NegociosController : Controller
     {
+        HorarioAtencion hora = new HorarioAtencion();
         private DataContextLocal db = new DataContextLocal();
 
         // GET: Negocios
@@ -50,11 +51,12 @@ namespace Project.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> Create([Bind(Include = "idNegocio,nombreNegocio,Direccion,Pais,Ciudad,Telefono,Telefono2,Logo,horarioAtencion,Descripcion,Online,idCategoria")] Negocios negocios)
+        public async Task<ActionResult> Create([Bind(Include = "idNegocio,nombreNegocio,Direccion,Pais,Ciudad,Telefono,Telefono2,Logo,horaApertura,horaCierre,Descripcion,Online,idCategoria")] Negocios negocios)
         {
             if (ModelState.IsValid)
             {
                 db.Negocios.Add(negocios);
+                negocios.Online = hora.HorarioApertura(DateTime.Now, negocios.horaApertura, negocios.horaCierre).ToString();
                 await db.SaveChangesAsync();
                 return RedirectToAction("Index");
             }
@@ -84,11 +86,12 @@ namespace Project.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> Edit([Bind(Include = "idNegocio,nombreNegocio,Direccion,Pais,Ciudad,Telefono,Telefono2,Logo,horarioAtencion,Descripcion,Online,idCategoria")] Negocios negocios)
+        public async Task<ActionResult> Edit([Bind(Include = "idNegocio,nombreNegocio,Direccion,Pais,Ciudad,Telefono,Telefono2,Logo,horaApertura,horaCierre,Descripcion,Online,idCategoria")] Negocios negocios)
         {
             if (ModelState.IsValid)
             {
                 db.Entry(negocios).State = EntityState.Modified;
+                negocios.Online = hora.HorarioApertura(DateTime.Now, negocios.horaApertura, negocios.horaCierre).ToString();
                 await db.SaveChangesAsync();
                 return RedirectToAction("Index");
             }

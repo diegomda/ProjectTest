@@ -51,6 +51,7 @@
   <ItemGroup>
     <Compile Include="Categorias.cs" />
     <Compile Include="DataContext.cs" />
+    <Compile Include="HorarioAtencion.cs" />
     <Compile Include="Negocios.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
