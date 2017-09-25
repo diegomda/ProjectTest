@@ -32,6 +32,7 @@ namespace Domain
         [Display(Name = "Ciudad")]
         public string Ciudad { get; set; }
 
+
         [Display(Name = "Teléfono")]
         public string Telefono { get; set; }
 
